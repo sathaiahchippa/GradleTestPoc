@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.blundell.tests.MyAndroidClassTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2014-10-07T16:13:44" hostname="vitali-ThinkPad" time="9.492">
+  <properties/>
+  <testcase name="testWhenActivityCreatedHelloTextViewIsVisible" classname="com.blundell.tests.MyAndroidClassTest" time="9.492"/>
+  <system-out><![CDATA[DEBUG: Loading resources for com.quandoo.gradletestpoc from /home/vitali/work/GradleTestPoc/app/src/main/res...
+DEBUG: Loading resources for android from jar:/home/vitali/.m2/repository/org/robolectric/android-all/4.3_r2-robolectric-0/android-all-4.3_r2-robolectric-0.jar!/res...
+]]></system-out>
+  <system-err><![CDATA[WARNING: no system properties value for ro.build.date.utc
+]]></system-err>
+</testsuite>

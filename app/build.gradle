@@ -1,0 +1,88 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 20
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "com.quandoo.gradletestpoc"
+        minSdkVersion 15
+        targetSdkVersion 20
+        versionCode 1
+        versionName "1.0"
+//        testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+//        testInstrumentationRunner "com.quandoo.gradletestpoc.test.Instrumentation"
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+
+        /*uats{
+            runProguard false
+            defaultConfig.testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+        }*/
+    }
+
+    productFlavors {
+        Its {
+            testInstrumentationRunner "com.google.android.apps.common.testing.testrunner.GoogleInstrumentationTestRunner"
+        }
+
+        Uats {
+            testInstrumentationRunner "com.quandoo.gradletestpoc.test.Instrumentation"
+        }
+    }
+
+    packagingOptions {
+        exclude 'LICENSE.txt'
+    }
+
+}
+
+sourceSets {
+    unitTest {
+        java.srcDir file('src/androidTest/java/com/quandoo/gradletestpoc/unit')
+    }
+}
+
+configurations {
+    unitTestCompile.extendsFrom runtime
+    unitTestRuntime.extendsFrom unitTestCompile
+}
+
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+
+//    androidTestCompile files("$project.buildDir/intermediates/classes/debug")
+
+    androidTestCompile 'info.cukes:cucumber-core:1.2.0-1-SNAPSHOT'
+    androidTestCompile 'info.cukes:cucumber-java:1.2.0-1-SNAPSHOT'
+    androidTestCompile('info.cukes:cucumber-android:1.2.0-1-SNAPSHOT') {
+    }
+    androidTestCompile('com.jakewharton.espresso:espresso:1.1-r3') {
+    }
+    androidTestCompile('com.jakewharton.espresso:espresso-support-v4:1.1-r3') {
+
+    }
+//    unitTestCompile 'junit:junit:4.11'
+    unitTestCompile('junit:junit:4.11') {
+//        exclude group: 'org.hamcrest', module: 'hamcrest-core'
+    }
+
+
+}
+
+/*task testPrint(){
+    println(project.)
+}*/
+
+task unitTest(type: Test, dependsOn: assemble) {
+    description = "run unit tests"
+    testClassesDir = project.sourceSets.unitTest.output.classesDir
+    classpath = project.sourceSets.unitTest.runtimeClasspath
+}
