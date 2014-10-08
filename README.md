@@ -1,5 +1,6 @@
-Project structure
-=================
+#Gradle testing template project
+
+##Project structure
 
 Current:
 
