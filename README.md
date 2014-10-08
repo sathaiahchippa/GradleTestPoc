@@ -2,14 +2,14 @@
 
 ##Project structure
 
-Current:
+###Current:
 
                app (+ integration-tests & acceptance-tests)
                 ^
                 |
                 |
             unit-tests
-Desired:
+###Desired:
 
           ---------->   app  <------------
          |               ^                |
@@ -35,7 +35,7 @@ Its only:
 ./gradlew connectedAndroidTestItsDebug
 ```
 
-Unit tests can be ran using one of the following:
+Unit tests can be run using one of the following:
 
 ```
 ./gradlew test
@@ -43,7 +43,7 @@ Unit tests can be ran using one of the following:
 ./gradlew build
 ```
 
-##IDE Setup
+##IDE Setup (tested for AS 0.8.11)
 ###Cucumber AS plugin setup
 1. Switch to Canary Channel: Settings —> Updates —> Check for updates in channel
 2. Download "Gherkin" and "Cucumber for java" plugins:
