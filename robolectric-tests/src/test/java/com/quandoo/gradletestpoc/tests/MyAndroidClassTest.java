@@ -1,10 +1,10 @@
-package com.blundell.tests;
+package com.quandoo.gradletestpoc.tests;
 
 import android.view.View;
 
-import com.blundell.RobolectricGradleTestRunner;
 import com.quandoo.gradletestpoc.MyActivity;
 import com.quandoo.gradletestpoc.R;
+import com.quandoo.gradletestpoc.RobolectricGradleTestRunner;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

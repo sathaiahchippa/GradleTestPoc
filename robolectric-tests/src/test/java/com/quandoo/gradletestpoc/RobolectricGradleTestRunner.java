@@ -1,4 +1,4 @@
-package com.blundell;
+package com.quandoo.gradletestpoc;
 
 import org.junit.runners.model.InitializationError;
 import org.robolectric.AndroidManifest;
