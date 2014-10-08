@@ -2,9 +2,7 @@ package com.quandoo.gradletestpoc.test;
 
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
-
 import com.quandoo.gradletestpoc.MyActivity;
-
 import cucumber.api.CucumberOptions;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;

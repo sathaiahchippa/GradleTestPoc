@@ -26,6 +26,9 @@ android {
 
         Uats {
             testInstrumentationRunner "com.quandoo.gradletestpoc.test.Instrumentation"
+
+            // passing instrumentation parameters
+            buildConfigField "int", "FOO", "42"
         }
     }
 
@@ -36,10 +39,10 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
-    androidTestCompile 'info.cukes:cucumber-core:1.2.0-1-SNAPSHOT'
-    androidTestCompile 'info.cukes:cucumber-java:1.2.0-1-SNAPSHOT'
-    androidTestCompile 'info.cukes:cucumber-android:1.2.0-1-SNAPSHOT'
+    androidTestCompile fileTree(dir: 'libs', include: ['*.jar'])
+//    androidTestCompile 'info.cukes:cucumber-core:1.2.0-1-SNAPSHOT'
+//    androidTestCompile 'info.cukes:cucumber-java:1.2.0-1-SNAPSHOT'
+//    androidTestCompile 'info.cukes:cucumber-android:1.2.0-1-SNAPSHOT'
     androidTestCompile 'com.jakewharton.espresso:espresso:1.1-r3'
     androidTestCompile 'com.jakewharton.espresso:espresso-support-v4:1.1-r3'
 }

@@ -2,9 +2,7 @@ package com.quandoo.gradletestpoc.test;
 
 import com.google.android.apps.common.testing.ui.espresso.matcher.ViewMatchers;
 import com.quandoo.gradletestpoc.R;
-
 import cucumber.api.java.en.Then;
-
 import static com.google.android.apps.common.testing.ui.espresso.Espresso.onView;
 import static com.google.android.apps.common.testing.ui.espresso.action.ViewActions.click;
 

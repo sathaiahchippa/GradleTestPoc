@@ -2,6 +2,8 @@ apply plugin: 'java'
 
 repositories {
     def androidHome = System.getenv("ANDROID_HOME")
+
+    // android repository is added in order to satisfy robolectric 2.3 dependencies
     maven {
         url "$androidHome/extras/android/m2repository/"
     }

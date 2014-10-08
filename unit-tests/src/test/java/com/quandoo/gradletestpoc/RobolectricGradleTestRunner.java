@@ -7,6 +7,7 @@ import org.robolectric.annotation.Config;
 import org.robolectric.res.Fs;
 
 public class RobolectricGradleTestRunner extends RobolectricTestRunner {
+    //TODO: Double check this constraint
     private static final int MAX_SDK_SUPPORTED_BY_ROBOLECTRIC = 18;
 
     public RobolectricGradleTestRunner(Class<?> testClass) throws InitializationError {
@@ -15,8 +16,10 @@ public class RobolectricGradleTestRunner extends RobolectricTestRunner {
 
     @Override
     protected AndroidManifest getAppManifest(Config config) {
+        //TODO: parametrize this (using BuildConfig or system props maybe)
         String manifestProperty = "../app/src/main/AndroidManifest.xml";
         String resProperty = "../app/src/main/res";
+
         return new AndroidManifest(Fs.fileFromPath(manifestProperty), Fs.fileFromPath(resProperty)) {
             @Override
             public int getTargetSdkVersion() {

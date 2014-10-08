@@ -1,7 +1,6 @@
 package com.quandoo.gradletestpoc;
 
 import org.junit.Test;
-
 import static org.junit.Assert.fail;
 
 /**
@@ -11,7 +10,7 @@ import static org.junit.Assert.fail;
 public class JunitTest {
 
     @Test
-    public void testDummy(){
+    public void testDummy() {
         fail();
     }
 }
