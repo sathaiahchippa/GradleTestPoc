@@ -47,8 +47,8 @@ Unit tests can be run using one of the following:
 ###Cucumber AS plugin setup
 1. Switch to Canary Channel: Settings —> Updates —> Check for updates in channel
 2. Download "Gherkin" and "Cucumber for java" plugins:
-    * https://plugins.jetbrains.com/plugin/7211?pr=idea
-    * https://plugins.jetbrains.com/plugin/7212?pr=idea
+    * https://plugins.jetbrains.com/plugin/download?pr=idea&updateId=15226
+    * https://plugins.jetbrains.com/plugin/download?pr=idea&updateId=15227
 3. Install the plugins: Settings -> Plugins -> Install plugin from disk
 
 ###Setup AS Robolectric run configuration
