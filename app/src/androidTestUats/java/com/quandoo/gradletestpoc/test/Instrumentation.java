@@ -1,10 +1,14 @@
 package com.quandoo.gradletestpoc.test;
 
 import android.os.Bundle;
+
 import com.google.android.apps.common.testing.testrunner.GoogleInstrumentation;
+
 import cucumber.api.android.CucumberInstrumentationCore;
 
 public class Instrumentation extends GoogleInstrumentation {
+
+    private static final String TAGS_KEY = "tags";
 
     private final CucumberInstrumentationCore instrumentationCore = new CucumberInstrumentationCore(this);
 
@@ -13,8 +17,10 @@ public class Instrumentation extends GoogleInstrumentation {
         super.onCreate(bundle);
 
         // Reading runner params
-        int foo = BuildConfig.FOO;
-        bundle.putInt("foo", foo);
+        String tags = BuildConfig.TAGS;
+        if (!tags.isEmpty()) {
+            bundle.putString(TAGS_KEY, tags);
+        }
 
         instrumentationCore.create(bundle);
         start();

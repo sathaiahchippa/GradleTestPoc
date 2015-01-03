@@ -14,7 +14,7 @@ android {
 
     buildTypes {
         release {
-            runProguard false
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
@@ -28,7 +28,7 @@ android {
             testInstrumentationRunner "com.quandoo.gradletestpoc.test.Instrumentation"
 
             // passing instrumentation parameters
-            buildConfigField "int", "FOO", "42"
+            buildConfigField "String", "TAGS", "\"${getTagsProperty()}\""
         }
     }
 
@@ -45,4 +45,8 @@ dependencies {
     androidTestCompile 'info.cukes:cucumber-android:1.2.0-1-SNAPSHOT'
     androidTestCompile 'com.jakewharton.espresso:espresso:1.1-r3'
     androidTestCompile 'com.jakewharton.espresso:espresso-support-v4:1.1-r3'
+}
+
+def getTagsProperty() {
+    return project.hasProperty("tags") ? project.getProperties().get("tags") : ""
 }
