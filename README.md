@@ -2,48 +2,38 @@
 
 ##Project structure
 
-###Current:
-
-               app (+ integration-tests & acceptance-tests)
-                ^
-                |
-                |
-            unit-tests
-###Desired:
-
-          ---------->   app  <------------
-         |               ^                |
+                        app
+                         ￬
+          ---------->   core  <-----------
+         |               ￪                |
          |               |                |
     unit-tests   integration-tests  acceptance-tests
 
 ##Run them all
-Uats & Its together:
 
 ```
 ./gradlew connectedCheck
 ```
 
-Uats only:
+acceptance only:
 
 ```
-./gradlew connectedAndroidTestUatsDebug
+./gradlew :accteptance-test:connectedCheck
 ```
 
-Its only:
+integration only:
 
 ```
-./gradlew connectedAndroidTestItsDebug
+./gradlew :integration-test:connectedCheck
 ```
 
-Unit tests can be run using one of the following:
+unit tests only:
 
 ```
-./gradlew test
-./gradlew check
-./gradlew build
+./gradlew :unit-test:check
 ```
 
-##IDE Setup (tested for AS 0.8.11)
+##IDE Setup (tested for AS 1.1 Beta 2)
 ###Cucumber AS plugin setup
 1. Switch to Canary Channel: Settings —> Updates —> Check for updates in channel
 2. Download "Gherkin" and "Cucumber for java" plugins:
